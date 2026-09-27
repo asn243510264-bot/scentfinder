@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trusted Perfume Stores in Malaysia | ScentFinder</title>
+  <meta name="description" content="Find perfume stores and sellers in Malaysia, with clear labels that explain how each seller has been checked.">
+  <meta name="theme-color" content="#0B0B0B">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="ScentFinder">
+  <meta property="og:title" content="Trusted Perfume Stores | ScentFinder">
+  <meta property="og:description" content="Compare perfume sellers by location, platform and verification status.">
+  <meta property="og:image" content="images/banners/og-image.png">
+
+  <link rel="icon" href="images/banners/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <script>document.documentElement.classList.add('js');</script>
+  <script src="js/perfumes.js" defer></script>
+  <script src="js/stores.js" defer></script>
+  <script src="js/main.js" defer></script>
+</head>
+<body data-page="stores">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header" id="site-header"></header>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li aria-current="page">Trusted Stores</li>
+          </ol>
+        </nav>
+        <h1 class="page-title">Trusted stores</h1>
+        <p class="page-subtitle">Find places to buy perfume in Malaysia, and see at a glance how well each seller has been checked.</p>
+      </div>
+    </section>
+
+    <section class="section" aria-label="Store directory">
+      <div class="container">
+        <p class="notice" style="margin-bottom: 2rem">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg>
+          <span><strong>Real Malaysian sellers, labelled honestly.</strong> Store details come from public information and may change. A seller is only marked official when it is the brand's own store; other retailers are listed until their authorised status is confirmed on the brand's store locator.</span>
+        </p>
+
+        <!-- Search and filters -->
+        <div class="toolbar">
+          <div>
+            <label class="field-label" for="store-search">Search stores</label>
+            <div class="search-field search-field-plain">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+              <input type="search" id="store-search" placeholder="Store name, city or platform..." autocomplete="off">
+            </div>
+          </div>
+          <div>
+            <label class="field-label" for="filter-location">Location</label>
+            <select id="filter-location">
+              <option value="all">All locations</option>
+            </select>
+          </div>
+          <div>
+            <label class="field-label" for="filter-platform">Platform</label>
+            <select id="filter-platform">
+              <option value="all">All platforms</option>
+            </select>
+          </div>
+          <div>
+            <label class="field-label" for="filter-type">Store type</label>
+            <select id="filter-type">
+              <option value="all">All store types</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="toolbar-meta">
+          <p class="results-count" id="store-count" aria-live="polite"></p>
+          <button class="link-btn" type="button" data-clear-stores>Clear filters</button>
+        </div>
+
+        <div class="store-grid" id="store-grid"></div>
+
+        <div class="empty-state" id="store-empty" hidden>
+          <h2>No stores match your search</h2>
+          <p>Try another city or platform, or clear the filters to see every store.</p>
+          <button class="btn btn-outline" type="button" data-clear-stores>Clear filters</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- What the verification labels mean -->
+    <section class="section section-alt" aria-labelledby="legend-title">
+      <div class="container">
+        <div class="section-header reveal">
+          <h2 id="legend-title" class="section-title">What the labels mean</h2>
+          <p class="section-subtitle">ScentFinder only calls a seller official or verified when a reliable source confirms it. Everything else is labelled honestly.</p>
+        </div>
+        <div class="legend" id="verification-legend"></div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="stores-cta-title">
+      <div class="container">
+        <div class="cta reveal">
+          <h2 id="stores-cta-title">Not sure if a seller is genuine?</h2>
+          <p>Use our checklist before you pay, especially when buying online or from a marketplace.</p>
+          <div class="cta-actions">
+            <a href="guide.html" class="btn btn-gold">Read the Perfume Guide</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="site-footer"></footer>
+</body>
+</html>

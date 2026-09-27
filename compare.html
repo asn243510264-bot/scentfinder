@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Compare Perfumes Side by Side | ScentFinder</title>
+  <meta name="description" content="Compare up to three perfumes side by side: notes, longevity, sillage, price, seasons and where to buy.">
+  <meta name="theme-color" content="#0B0B0B">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="ScentFinder">
+  <meta property="og:title" content="Compare Perfumes | ScentFinder">
+  <meta property="og:description" content="Compare notes, strength and price side by side.">
+  <meta property="og:image" content="images/banners/og-image.png">
+
+  <link rel="icon" href="images/banners/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <script>document.documentElement.classList.add('js');</script>
+  <script src="js/perfumes.js" defer></script>
+  <script src="js/stores.js" defer></script>
+  <script src="js/compare.js" defer></script>
+  <script src="js/main.js" defer></script>
+</head>
+<body data-page="compare">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header" id="site-header"></header>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li aria-current="page">Compare</li>
+          </ol>
+        </nav>
+        <h1 class="page-title">Compare perfumes</h1>
+        <p class="page-subtitle">Put up to three perfumes side by side to see how their notes, strength and price differ.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="compare-picker">
+          <div>
+            <label class="field-label" for="compare-add">Add a perfume</label>
+            <select id="compare-add">
+              <option value="">Choose a perfume…</option>
+            </select>
+          </div>
+          <p class="muted small" id="compare-status" aria-live="polite"></p>
+          <button class="link-btn" type="button" data-compare-clear>Clear all</button>
+        </div>
+
+        <!-- The comparison table is built by js/compare.js -->
+        <div id="compare-view"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="site-footer"></footer>
+</body>
+</html>

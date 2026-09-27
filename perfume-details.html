@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- The title and description are updated by JavaScript for each perfume -->
+  <title>Perfume Details | ScentFinder</title>
+  <meta name="description" content="Perfume notes, longevity, sillage, price range and trusted places to buy.">
+  <meta name="theme-color" content="#0B0B0B">
+
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="ScentFinder">
+  <meta property="og:title" content="Perfume Details | ScentFinder">
+  <meta property="og:description" content="Notes, longevity, price range and where to buy.">
+  <meta property="og:image" content="images/banners/og-image.png">
+
+  <link rel="icon" href="images/banners/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <script>document.documentElement.classList.add('js');</script>
+  <script src="js/perfumes.js" defer></script>
+  <script src="js/stores.js" defer></script>
+  <script src="js/main.js" defer></script>
+</head>
+<body data-page="details">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header" id="site-header"></header>
+
+  <main id="main">
+    <section class="page-hero page-hero-compact">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="perfumes.html">Perfumes</a></li>
+            <li aria-current="page" id="breadcrumb-current">Perfume details</li>
+          </ol>
+        </nav>
+      </div>
+    </section>
+
+    <!-- Filled by initDetailsPage() in js/perfumes.js -->
+    <div id="perfume-details">
+      <div class="container">
+        <p class="loading">Loading perfume details…</p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer" id="site-footer"></footer>
+</body>
+</html>

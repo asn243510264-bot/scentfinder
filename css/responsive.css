@@ -1,0 +1,390 @@
+/* =========================================================
+   ScentFinder – responsive.css
+   Layout changes for smaller screens.
+   Breakpoints (max-width):
+     1080px – small laptops & tablets in landscape (hamburger menu)
+      900px – tablets in portrait
+      640px – phones (Android & iPhone)
+      380px – very small phones
+   ========================================================= */
+
+/* ---------- Large desktop screens ---------- */
+@media (min-width: 1600px) {
+  :root { --container: 1320px; }
+}
+
+/* ---------- Small laptops / tablet landscape ---------- */
+@media (max-width: 1080px) {
+  /* Mobile navigation panel */
+  .menu-toggle { display: inline-grid; }
+
+  .main-nav {
+    position: fixed;
+    top: var(--header-height);
+    left: 0;
+    right: 0;
+    max-height: 0;
+    overflow: hidden;
+    visibility: hidden;
+    background: var(--color-black);
+    border-bottom: 1px solid var(--color-border);
+    transition: max-height 0.45s var(--ease), visibility 0.45s;
+  }
+
+  /* A solid header while the menu is open (a blurred header would
+     make the menu panel inside it see-through in some browsers) */
+  .nav-open .site-header {
+    background: var(--color-black);
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+
+  .nav-open .main-nav {
+    max-height: calc(100vh - var(--header-height));
+    max-height: calc(100dvh - var(--header-height));
+    overflow-y: auto;
+    visibility: visible;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    gap: 0;
+    width: min(100% - 3rem, var(--container));
+    margin-inline: auto;
+    padding-block: 0.5rem 1.5rem;
+  }
+
+  .nav-link {
+    display: block;
+    padding-block: 1rem;
+    border-bottom: 1px solid var(--color-border);
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    color: var(--color-text-soft);
+  }
+
+  .nav-link::after { display: none; }
+  .nav-link.is-active { color: var(--color-gold-light); }
+
+  /* Catalogue: filters collapse into a panel */
+  .catalogue-layout { grid-template-columns: 1fr; }
+
+  .filter-toggle { display: inline-flex; }
+
+  .filters {
+    position: static;
+    display: none;
+  }
+
+  .filters.is-open { display: block; }
+
+  .filters.is-open .filter-groups {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+
+  .filters.is-open .filter-group + .filter-group { margin-top: 0; }
+
+  .toolbar { grid-template-columns: 1fr 1fr 1fr; }
+  .toolbar > :first-child { grid-column: 1 / -1; }
+
+  .guide-layout { grid-template-columns: 1fr; gap: var(--space-5); }
+
+  .guide-toc {
+    position: static;
+    overflow-x: auto;
+  }
+
+  .guide-toc ol {
+    display: flex;
+    gap: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .guide-toc a {
+    padding: 0.4rem 0.9rem;
+    border: 1px solid var(--color-border-strong);
+    border-radius: var(--radius-pill);
+    white-space: nowrap;
+  }
+
+  .guide-toc a:hover,
+  .guide-toc a.is-active { border-color: var(--color-gold); }
+
+  .benefit-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ---------- Tablet portrait ---------- */
+@media (max-width: 900px) {
+  .hero { min-height: auto; }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-5);
+    padding-top: var(--space-7);
+  }
+
+  .hero-title { max-width: 14ch; }
+
+  .blotter-fan {
+    --strip-w: 50px;
+    --strip-h: 300px;
+  }
+
+  .search-panel { grid-template-columns: 1fr; gap: var(--space-5); }
+
+  .category-index { column-gap: var(--space-6); }
+
+  .brand-wall { grid-template-columns: repeat(3, 1fr); }
+
+  .steps {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: var(--space-7);
+  }
+
+  .auth-grid,
+  .about-intro,
+  .details-hero {
+    grid-template-columns: 1fr;
+    gap: var(--space-7);
+  }
+
+  .details-media {
+    position: static;
+    max-width: 520px;
+  }
+
+  .notes-grid { grid-template-columns: 1fr; }
+
+  .footer-grid { grid-template-columns: repeat(3, 1fr); }
+  .footer-brand { grid-column: 1 / -1; }
+
+  .seller-row { grid-template-columns: auto 1fr; }
+  .seller-status,
+  .seller-action { grid-column: 1 / -1; }
+
+  .quick-view { grid-template-columns: 1fr; }
+  .quick-view-media img { max-height: 320px; }
+
+  .reason { grid-template-columns: 1fr; gap: 0.4rem; }
+}
+
+/* ---------- Phones (Android & iPhone) ---------- */
+@media (max-width: 640px) {
+  :root { --header-height: 64px; }
+
+  .container { width: min(100% - 2.25rem, var(--container)); }
+
+  .nav-list { width: min(100% - 2.25rem, var(--container)); }
+
+  .logo { font-size: 1.4rem; }
+
+  .icon-btn {
+    width: 42px;
+    height: 42px;
+  }
+
+  /* 16px inputs stop iPhone Safari from zooming in on focus */
+  input,
+  select { font-size: 16px; }
+
+  .section-header-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hero-actions .btn { flex: 1 1 100%; }
+
+  .blotter-fan {
+    --strip-w: 40px;
+    --strip-h: 230px;
+  }
+
+  .blotter span { font-size: 0.95rem; }
+
+  .search-field .btn { padding: 0.7rem 1.1rem; }
+
+  .category-index { grid-template-columns: 1fr; }
+
+  .brand-wall { grid-template-columns: repeat(2, 1fr); }
+  .brand-tile { min-height: 120px; }
+
+  .steps { grid-template-columns: 1fr; row-gap: var(--space-6); }
+
+  /* Two perfume cards per row on phones */
+  .perfume-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.8rem;
+  }
+
+  .perfume-card-body {
+    padding: 0.9rem 0.9rem 1rem;
+    gap: 0.35rem;
+  }
+
+  .card-title { font-size: 1.1rem; }
+
+  .card-footer {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.6rem;
+  }
+
+  .card-footer .btn { width: 100%; }
+
+  .fav-btn {
+    width: 36px;
+    height: 36px;
+    top: 0.5rem;
+    right: 0.5rem;
+  }
+
+  .card-tag {
+    top: 0.6rem;
+    left: 0.6rem;
+  }
+
+  /* Quick view is a hover extra; phones use the details page instead */
+  .quick-view-btn { display: none; }
+
+  .filters.is-open .filter-groups { grid-template-columns: 1fr 1fr; }
+
+  .catalogue-toolbar { align-items: stretch; }
+
+  .sort-control {
+    flex: 1 1 100%;
+    justify-content: space-between;
+  }
+
+  .toolbar { grid-template-columns: 1fr; }
+
+  .stat-grid { grid-template-columns: 1fr; }
+
+  .details-actions .btn { flex: 1 1 100%; }
+
+  .guide-step {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+
+  .guide-step-number { font-size: 2.5rem; }
+
+  .mv-grid,
+  .benefit-grid { grid-template-columns: 1fr; }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-6);
+  }
+
+  .footer-bottom { flex-direction: column; }
+
+  /* Modals become bottom sheets on phones */
+  .modal {
+    align-items: end;
+    padding: 0;
+  }
+
+  .modal-dialog {
+    max-height: 92vh;
+    max-height: 92dvh;
+    border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+  }
+
+  .quick-view-body,
+  .store-modal { padding: 1.75rem 1.35rem 2rem; }
+
+  .quick-stats { grid-template-columns: 1fr 1fr; }
+
+  .notice-lg {
+    padding: 1.25rem;
+    font-size: var(--fs-base);
+  }
+
+  .back-to-top {
+    right: 1rem;
+    bottom: 1rem;
+    width: 44px;
+    height: 44px;
+  }
+
+  .toast { bottom: 1.25rem; }
+}
+
+/* ---------- Quiz & compare on tablets and phones ---------- */
+@media (max-width: 900px) {
+  .match-card { grid-template-columns: auto 130px 1fr; }
+  .match-card img { width: 130px; }
+}
+
+@media (max-width: 640px) {
+  .quiz-options,
+  .quiz-options-3 { grid-template-columns: 1fr; }
+
+  .quiz-option { padding: 1rem 1.15rem; }
+
+  .match-card {
+    grid-template-columns: 96px 1fr;
+    align-items: start;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .match-card img { width: 96px; }
+
+  .match-rank {
+    position: absolute;
+    top: 0.6rem;
+    left: 0.6rem;
+    z-index: 1;
+    display: grid;
+    place-items: center;
+    width: 30px;
+    height: 30px;
+    border: 1px solid var(--color-gold);
+    border-radius: 50%;
+    background: var(--color-black);
+    font-size: 1rem;
+  }
+
+  .match-card h3 { font-size: var(--fs-xl); }
+
+  .match-actions .btn { flex: 1 1 100%; }
+
+  .quiz-results-actions .btn { flex: 1 1 100%; }
+
+  .compare-table th:first-child { width: 110px; }
+
+  .compare-tray { gap: 0.5rem; }
+  .compare-tray-item span { display: none; }
+  .compare-tray-slot { width: 38px; height: 50px; }
+}
+
+/* ---------- Very small phones ---------- */
+@media (max-width: 380px) {
+  .perfume-grid { grid-template-columns: 1fr; }
+
+  .blotter-fan {
+    --strip-w: 34px;
+    --strip-h: 200px;
+  }
+
+  .filters.is-open .filter-groups { grid-template-columns: 1fr; }
+
+  .footer-grid { grid-template-columns: 1fr; }
+}
+
+/* ---------- Touch screens (no hover) ---------- */
+@media (hover: none) {
+  .perfume-card:hover .perfume-card-media img { transform: none; }
+
+  .quick-view-btn {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (hover: none) and (max-width: 640px) {
+  .quick-view-btn { display: none; }
+}

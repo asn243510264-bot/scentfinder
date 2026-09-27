@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perfume Discovery | ScentFinder</title>
+  <meta name="description" content="Search and filter original perfumes by brand, gender, fragrance family, price, season and longevity.">
+  <meta name="theme-color" content="#0B0B0B">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="ScentFinder">
+  <meta property="og:title" content="Perfume Discovery | ScentFinder">
+  <meta property="og:description" content="Search, filter and compare designer, niche and luxury perfumes.">
+  <meta property="og:image" content="images/banners/og-image.png">
+
+  <link rel="icon" href="images/banners/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <script>document.documentElement.classList.add('js');</script>
+  <script src="js/perfumes.js" defer></script>
+  <script src="js/stores.js" defer></script>
+  <script src="js/main.js" defer></script>
+</head>
+<body data-page="perfumes">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header" id="site-header"></header>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li aria-current="page">Perfumes</li>
+          </ol>
+        </nav>
+        <h1 class="page-title">Perfume discovery</h1>
+        <p class="page-subtitle">Search, filter and compare popular designer, niche and luxury fragrances.</p>
+      </div>
+    </section>
+
+    <section class="section" aria-label="Perfume catalogue">
+      <div class="container">
+
+        <!-- Search and category chips -->
+        <div class="catalogue-top">
+          <div class="search-field search-field-plain">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+            <label for="catalogue-search" class="visually-hidden">Search perfume, brand or fragrance</label>
+            <input type="search" id="catalogue-search" placeholder="Search perfume, brand or fragrance..." autocomplete="off">
+          </div>
+
+          <div class="category-chips" id="category-chips" role="group" aria-label="Categories">
+            <button class="chip is-active" type="button" data-category="All" aria-pressed="true">All</button>
+            <button class="chip" type="button" data-category="Men" aria-pressed="false">Men</button>
+            <button class="chip" type="button" data-category="Women" aria-pressed="false">Women</button>
+            <button class="chip" type="button" data-category="Unisex" aria-pressed="false">Unisex</button>
+            <button class="chip" type="button" data-category="Luxury" aria-pressed="false">Luxury</button>
+            <button class="chip" type="button" data-category="Niche" aria-pressed="false">Niche</button>
+            <button class="chip" type="button" data-category="Designer" aria-pressed="false">Designer</button>
+          </div>
+        </div>
+
+        <div class="catalogue-layout">
+
+          <!-- Filters sidebar (collapses into a panel on tablets and phones) -->
+          <aside class="filters" id="filters" aria-labelledby="filters-title">
+            <div class="filters-head">
+              <h2 id="filters-title">Filters</h2>
+              <button class="link-btn" type="button" data-clear-filters>Clear all</button>
+            </div>
+
+            <div class="filter-groups">
+              <div class="filter-group">
+                <label class="field-label" for="filter-brand">Brand</label>
+                <select id="filter-brand">
+                  <option value="all">All brands</option>
+                </select>
+              </div>
+
+              <div class="filter-group">
+                <label class="field-label" for="filter-gender">Gender</label>
+                <select id="filter-gender">
+                  <option value="all">Any</option>
+                  <option value="Men">Men</option>
+                  <option value="Women">Women</option>
+                  <option value="Unisex">Unisex</option>
+                </select>
+              </div>
+
+              <div class="filter-group">
+                <label class="field-label" for="filter-family">Fragrance type</label>
+                <select id="filter-family">
+                  <option value="all">All families</option>
+                </select>
+              </div>
+
+              <div class="filter-group">
+                <label class="field-label" for="filter-price">Price range</label>
+                <select id="filter-price">
+                  <option value="all">Any price</option>
+                  <option value="under-500">From under RM500</option>
+                  <option value="500-1000">From RM500 to RM1,000</option>
+                  <option value="over-1000">From RM1,000 and above</option>
+                </select>
+              </div>
+
+              <div class="filter-group">
+                <label class="field-label" for="filter-popularity">Popularity</label>
+                <select id="filter-popularity">
+                  <option value="all">Any</option>
+                  <option value="bestseller">Bestsellers</option>
+                  <option value="popular">Popular</option>
+                  <option value="hidden">Hidden gems</option>
+                </select>
+              </div>
+
+              <div class="filter-group">
+                <label class="field-label" for="filter-season">Season</label>
+                <select id="filter-season">
+                  <option value="all">Any season</option>
+                  <option value="Spring">Spring</option>
+                  <option value="Summer">Summer</option>
+                  <option value="Autumn">Autumn</option>
+                  <option value="Winter">Winter</option>
+                </select>
+              </div>
+
+              <div class="filter-group">
+                <label class="field-label" for="filter-longevity">Longevity</label>
+                <select id="filter-longevity">
+                  <option value="all">Any</option>
+                  <option value="light">Light (under 6 hours)</option>
+                  <option value="moderate">Moderate (6 to 7 hours)</option>
+                  <option value="long">Long-lasting (8 hours or more)</option>
+                </select>
+              </div>
+            </div>
+          </aside>
+
+          <!-- Results -->
+          <div class="catalogue-main">
+            <div class="catalogue-toolbar">
+              <button class="btn btn-outline btn-sm filter-toggle" id="filter-toggle" type="button" aria-expanded="false" aria-controls="filters">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M7 12h10M10 18h4"/></svg>
+                Filters <span id="active-filter-count"></span>
+              </button>
+              <p class="results-count" id="results-count" aria-live="polite"></p>
+              <div class="sort-control">
+                <label class="field-label" for="sort-select">Sort by</label>
+                <select id="sort-select">
+                  <option value="popular">Most popular</option>
+                  <option value="name">Name (A to Z)</option>
+                  <option value="price-low">Price: low to high</option>
+                  <option value="price-high">Price: high to low</option>
+                  <option value="longevity">Longest lasting</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="perfume-grid" id="perfume-grid"></div>
+
+            <div class="empty-state" id="empty-state" hidden>
+              <h2>No perfumes match these filters</h2>
+              <p>Try a different search term, or clear the filters to see the whole catalogue.</p>
+              <button class="btn btn-outline" type="button" data-clear-filters>Clear filters</button>
+            </div>
+
+            <p class="data-note">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg>
+              Prices are indicative sample ranges in Malaysian Ringgit and may change. Bottle images are illustrations. Always confirm details with the seller.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="site-footer"></footer>
+</body>
+</html>

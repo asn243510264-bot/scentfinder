@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scent Quiz: Find Your Perfume | ScentFinder</title>
+  <meta name="description" content="Answer five quick questions and get three perfume suggestions that match your taste, budget and lifestyle.">
+  <meta name="theme-color" content="#0B0B0B">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="ScentFinder">
+  <meta property="og:title" content="Scent Quiz | ScentFinder">
+  <meta property="og:description" content="Find your perfume in five quick questions.">
+  <meta property="og:image" content="images/banners/og-image.png">
+
+  <link rel="icon" href="images/banners/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <script>document.documentElement.classList.add('js');</script>
+  <script src="js/perfumes.js" defer></script>
+  <script src="js/stores.js" defer></script>
+  <script src="js/quiz.js" defer></script>
+  <script src="js/main.js" defer></script>
+</head>
+<body data-page="quiz">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header" id="site-header"></header>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li aria-current="page">Scent Quiz</li>
+          </ol>
+        </nav>
+        <h1 class="page-title">Find your scent</h1>
+        <p class="page-subtitle">Answer five quick questions and we'll pick three perfumes from our catalogue that suit you.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <!-- The questions and results are built by js/quiz.js -->
+        <div class="quiz" id="quiz" aria-live="polite">
+          <noscript><p>The Scent Quiz needs JavaScript to run.</p></noscript>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="site-footer"></footer>
+</body>
+</html>

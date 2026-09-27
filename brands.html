@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perfume Brands | ScentFinder</title>
+  <meta name="description" content="Explore designer, niche and luxury perfume brands and browse their fragrances on ScentFinder.">
+  <meta name="theme-color" content="#0B0B0B">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="ScentFinder">
+  <meta property="og:title" content="Perfume Brands | ScentFinder">
+  <meta property="og:description" content="Designer, niche and luxury perfume houses in one place.">
+  <meta property="og:image" content="images/banners/og-image.png">
+
+  <link rel="icon" href="images/banners/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <script>document.documentElement.classList.add('js');</script>
+  <script src="js/perfumes.js" defer></script>
+  <script src="js/stores.js" defer></script>
+  <script src="js/main.js" defer></script>
+</head>
+<body data-page="brands">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header" id="site-header"></header>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li aria-current="page">Brands</li>
+          </ol>
+        </nav>
+        <h1 class="page-title">Perfume brands</h1>
+        <p class="page-subtitle">Fashion houses, luxury labels and independent niche perfumers. Pick a brand to see its perfumes.</p>
+      </div>
+    </section>
+
+    <section class="section" aria-label="Brand list">
+      <div class="container">
+        <div class="brand-toolbar">
+          <div class="search-field search-field-plain">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+            <label for="brand-search" class="visually-hidden">Search brands</label>
+            <input type="search" id="brand-search" placeholder="Search brand or country..." autocomplete="off">
+          </div>
+          <div class="category-chips" role="group" aria-label="Brand type">
+            <button class="chip is-active" type="button" data-brand-type="All" aria-pressed="true">All</button>
+            <button class="chip" type="button" data-brand-type="Designer" aria-pressed="false">Designer</button>
+            <button class="chip" type="button" data-brand-type="Niche" aria-pressed="false">Niche</button>
+            <button class="chip" type="button" data-brand-type="Luxury" aria-pressed="false">Luxury</button>
+          </div>
+        </div>
+
+        <p class="results-count" id="brand-count" aria-live="polite" style="margin-bottom: 1.5rem"></p>
+
+        <div class="brand-card-grid" id="brand-grid"></div>
+
+        <div class="empty-state" id="brand-empty" hidden>
+          <h2>No brands found</h2>
+          <p>Check the spelling, or clear the search to see every brand.</p>
+          <button class="btn btn-outline" type="button" id="brand-clear">Clear search</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" aria-labelledby="types-title">
+      <div class="container">
+        <div class="section-header reveal">
+          <h2 id="types-title" class="section-title">Designer, niche or luxury?</h2>
+          <p class="section-subtitle">A quick guide to the three kinds of brands in the catalogue.</p>
+        </div>
+        <div class="mv-grid" style="grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr))">
+          <article class="mv-card">
+            <h3>Designer</h3>
+            <p>Made by fashion houses such as Dior or Versace. Easy to find, widely loved and usually the most affordable.</p>
+          </article>
+          <article class="mv-card">
+            <h3>Niche</h3>
+            <p>Made by houses that focus only on perfume. More unusual scents, smaller distribution and often higher prices.</p>
+          </article>
+          <article class="mv-card">
+            <h3>Luxury</h3>
+            <p>Premium lines, sometimes from fashion brands, with richer ingredients, special bottles and prices to match.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="site-footer"></footer>
+</body>
+</html>
